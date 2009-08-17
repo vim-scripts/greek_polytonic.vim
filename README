@@ -1,0 +1,92 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2743
+
+This is a keyboard layout useful to native Greek speakers and Greek
+scholars (Hellenists) who wish to use Vim/gVim to type traditional Greek
+(often referred to as multi-accented or polytonic).
+
+This layout allows the typing of multi-accented (polytonic) Greek
+text in the manner of writing by hand.  Accents and breathings are typed
+after the vowels in any order without dead keys. In other words, first we 
+type the letter and then we "decorate" it with the required accents.  This
+serves for a more comfortable typing of Greek.  Furthermore it allows easier
+correction of errors. A wrong accent (or no accent) can be replaced with
+with the correct one without deleting the character.  We simply place the
+cursor to the right of the vowel and press the required accent.  If the
+character can take the accent, it will be replaced by the accented version
+of the same character.
+--------------------------------------------------------------
+The main accent keys are as follows:
+
+/              Oxia (acute)
+\              Varia (grave)
+~ (or =)   Perispomeni (circumflex)
+]               Psili  (lenis)
+[               Dasia (asper)
+"               Dialytika (diaeresis)
+|               Ypogegrammeni (Iota subscript)
+---------------------------------------------------------------
+
+Examples. 
+Typing the sequence:    a/, will give Small Alpha with Oxia.
+Typing:  a/]  or  a]/   will give Small Alpha with Oxia and Psili.
+Typing:  a, followed by any combination of /,],|, will give 
+              Small Alpha with Oxia and Psili and Ypogegrammeni.
+
+Typing of multi-accented Greek is easier this way because this method is 
+similar to the way we write by hand.  Only a few accent keys are used 
+(easier to memorize). See the included table. Also read the source file.
+
+You can still use the dead keys of the modern Greek keymap. For example,
+ Alpha with Tonos can be derived either with "a/" or with ";a".
+
+Installation:
+
+  Copy the file greek_polytonic.vim to your home .vim  keymap directory
+  (~/.vim/keymap/) If the directory does not exist, create it.
+
+
+
+
+Usage:
+
+  * Load the keymap:
+              set keymap=greek_polytonic
+  * Set encodings:  
+              set encoding=utf-8
+              set inputenc=utf-8
+              set fenc=utf-8
+ 
+  * Set vim to use a monospaced unicode font that includes all the "Greek Extented" characters and symbols.
+     Example: set guifont=Consolas\ Regular\ 16
+     Note: for m$ windows this should be:  set guifont=Consolas:h16
+
+  Examples of suitable fonts are:
+
+    Dejavu Sans mono
+    Courier New
+    Bitstream Vera Sans Mono
+    Consolas 
+ 
+* Also switch the keyboard to Greek with ALT-SHIFT (or whatever)
+
+* To type any of the actual symbols of the accent keys (/, \, ] , [, .. etc.,)  
+   you can toggle off the keymap with CTRL-^.
+
+
+
+Notes: 
+
+   Consolas is a Microsoft font found in Windows 7 (The Consolas font
+   shipped with Windows Vista is not suitable - has no extended Greek
+   characters). It is a very good monospaced font for displaying
+   and for printing polytonic Greek text.  (Microsoft is very good to us
+   Greek scholars). Here is a screenshot of vim editing the text of 
+   Ptolemy's Almagest displayed in 16 pt Consolas:
+   http://img9.imageshack.us/img9/3386/ptolemyalmagest.jpg
+   
+   If you have problems with printing greek utf-8 use
+   paps (http://paps.sourceforge.net/)
+   I use it from within vim by creating a command as folows:
+   :command Paps write !paps --font=Consolas\ 10 | lpr
+
+
