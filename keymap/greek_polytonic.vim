@@ -1,6 +1,6 @@
 " Vim Keymap file for Polytonic Greek (utf-8)
 " Maintainer: Proteus <proteuss@sdf.lonestar.org>
-" Last Updated: Mon 10 Aug 2009 14:00:00
+" Last Updated: Mon 10 Oct 2010 14:00:00  Version 1.1
 "
 "-----------------------------------------------------------------------------
 " Installation:
@@ -18,7 +18,7 @@
 "  Extented" characters and symbols.
 "    
 "  Example: set guifont=Consolas\ Regular\ 16
-"
+"     Note: for m$ windows this should be:  set guifont=Consolas:h16
 "  Examples of suitable fonts are:
 "
 "   Dejavu Sans mono
@@ -117,14 +117,6 @@
 "  ucs_number: [CASE, NAME, BREATHING, ACCENT, YPOGEGRAMMENI]
 "-----------------------------------------------------------------------------
 let grk_ucs_table = {
-\0x386:['CAPITAL','ALPHA','','TONOS',''],
-\0x388:['CAPITAL','EPSILON','','TONOS',''],
-\0x389:['CAPITAL','ETA','','TONOS',''],
-\0x38A:['CAPITAL','IOTA','','TONOS',''],
-\0x38C:['CAPITAL','OMICRON','','TONOS',''],
-\0x38E:['CAPITAL','UPSILON','','TONOS',''],
-\0x38F:['CAPITAL','OMEGA','','TONOS',''],
-\0x390:['SMALL','IOTA','DIALYTIKA','TONOS',''],
 \0x391:['CAPITAL','ALPHA','','',''],
 \0x395:['CAPITAL','EPSILON','','',''],
 \0x397:['CAPITAL','ETA','','',''],
@@ -136,11 +128,6 @@ let grk_ucs_table = {
 \0x3A9:['CAPITAL','OMEGA','','',''],
 \0x3AA:['CAPITAL','IOTA','DIALYTIKA','',''],
 \0x3AB:['CAPITAL','UPSILON','DIALYTIKA','',''],
-\0x3AC:['SMALL','ALPHA','','TONOS',''],
-\0x3AD:['SMALL','EPSILON','','TONOS',''],
-\0x3AE:['SMALL','ETA','','TONOS',''],
-\0x3AF:['SMALL','IOTA','','TONOS',''],
-\0x3B0:['SMALL','UPSILON','DIALYTIKA','TONOS',''],
 \0x3B1:['SMALL','ALPHA','','',''],
 \0x3B5:['SMALL','EPSILON','','',''],
 \0x3B7:['SMALL','ETA','','',''],
@@ -152,9 +139,6 @@ let grk_ucs_table = {
 \0x3C9:['SMALL','OMEGA','','',''],
 \0x3CA:['SMALL','IOTA','DIALYTIKA','',''],
 \0x3CB:['SMALL','UPSILON','DIALYTIKA','',''],
-\0x3CC:['SMALL','OMICRON','','TONOS',''],
-\0x3CD:['SMALL','UPSILON','','TONOS',''],
-\0x3CE:['SMALL','OMEGA','','TONOS',''],
 \0x1D68:['SMALL','RHO','','',''],
 \0x1F00:['SMALL','ALPHA','PSILI','',''],
 \0x1F01:['SMALL','ALPHA','DASIA','',''],
@@ -257,19 +241,19 @@ let grk_ucs_table = {
 \0x1F6E:['CAPITAL','OMEGA','PSILI','PERISPOMENI',''],
 \0x1F6F:['CAPITAL','OMEGA','DASIA','PERISPOMENI',''],
 \0x1F70:['SMALL','ALPHA','','VARIA',''],
-\0x1F71:['SMALL','ALPHA','','OXIA',''],
+\0x03AC:['SMALL','ALPHA','','OXIA',''],
 \0x1F72:['SMALL','EPSILON','','VARIA',''],
-\0x1F73:['SMALL','EPSILON','','OXIA',''],
+\0x03AD:['SMALL','EPSILON','','OXIA',''],
 \0x1F74:['SMALL','ETA','','VARIA',''],
-\0x1F75:['SMALL','ETA','','OXIA',''],
+\0x03AE:['SMALL','ETA','','OXIA',''],
 \0x1F76:['SMALL','IOTA','','VARIA',''],
-\0x1F77:['SMALL','IOTA','','OXIA',''],
+\0x03AF:['SMALL','IOTA','','OXIA',''],
 \0x1F78:['SMALL','OMICRON','','VARIA',''],
-\0x1F79:['SMALL','OMICRON','','OXIA',''],
+\0x03CC:['SMALL','OMICRON','','OXIA',''],
 \0x1F7A:['SMALL','UPSILON','','VARIA',''],
-\0x1F7B:['SMALL','UPSILON','','OXIA',''],
+\0x03CD:['SMALL','UPSILON','','OXIA',''],
 \0x1F7C:['SMALL','OMEGA','','VARIA',''],
-\0x1F7D:['SMALL','OMEGA','','OXIA',''],
+\0x03CE:['SMALL','OMEGA','','OXIA',''],
 \0x1F80:['SMALL','ALPHA','PSILI','','YPOGEGRAMMENI'],
 \0x1F81:['SMALL','ALPHA','DASIA','','YPOGEGRAMMENI'],
 \0x1F82:['SMALL','ALPHA','PSILI','VARIA','YPOGEGRAMMENI'],
@@ -328,7 +312,7 @@ let grk_ucs_table = {
 \0x1FB8:['CAPITAL','ALPHA','','VRACHY',''],
 \0x1FB9:['CAPITAL','ALPHA','','MACRON',''],
 \0x1FBA:['CAPITAL','ALPHA','','VARIA',''],
-\0x1FBB:['CAPITAL','ALPHA','','OXIA',''],
+\0x0386:['CAPITAL','ALPHA','','OXIA',''],
 \0x1FBC:['CAPITAL','ALPHA','','','PROSGEGRAMMENI'],
 \0x1FC2:['SMALL','ETA','','VARIA','YPOGEGRAMMENI'],
 \0x1FC3:['SMALL','ETA','','','YPOGEGRAMMENI'],
@@ -336,24 +320,24 @@ let grk_ucs_table = {
 \0x1FC6:['SMALL','ETA','','PERISPOMENI',''],
 \0x1FC7:['SMALL','ETA','','PERISPOMENI','YPOGEGRAMMENI'],
 \0x1FC8:['CAPITAL','EPSILON','','VARIA',''],
-\0x1FC9:['CAPITAL','EPSILON','','OXIA',''],
+\0x0388:['CAPITAL','EPSILON','','OXIA',''],
 \0x1FCA:['CAPITAL','ETA','','VARIA',''],
-\0x1FCB:['CAPITAL','ETA','','OXIA',''],
+\0x0389:['CAPITAL','ETA','','OXIA',''],
 \0x1FCC:['CAPITAL','ETA','','','PROSGEGRAMMENI'],
 \0x1FD0:['SMALL','IOTA','','VRACHY',''],
 \0x1FD1:['SMALL','IOTA','','MACRON',''],
 \0x1FD2:['SMALL','IOTA','DIALYTIKA','VARIA',''],
-\0x1FD3:['SMALL','IOTA','DIALYTIKA','OXIA',''],
+\0x0390:['SMALL','IOTA','DIALYTIKA','OXIA',''],
 \0x1FD6:['SMALL','IOTA','','PERISPOMENI',''],
 \0x1FD7:['SMALL','IOTA','DIALYTIKA','PERISPOMENI',''],
 \0x1FD8:['CAPITAL','IOTA','','VRACHY',''],
 \0x1FD9:['CAPITAL','IOTA','','MACRON',''],
 \0x1FDA:['CAPITAL','IOTA','','VARIA',''],
-\0x1FDB:['CAPITAL','IOTA','','OXIA',''],
+\0x038A:['CAPITAL','IOTA','','OXIA',''],
 \0x1FE0:['SMALL','UPSILON','','VRACHY',''],
 \0x1FE1:['SMALL','UPSILON','','MACRON',''],
 \0x1FE2:['SMALL','UPSILON','DIALYTIKA','VARIA',''],
-\0x1FE3:['SMALL','UPSILON','DIALYTIKA','OXIA',''],
+\0x03B0:['SMALL','UPSILON','DIALYTIKA','OXIA',''],
 \0x1FE4:['SMALL','RHO','PSILI','',''],
 \0x1FE5:['SMALL','RHO','DASIA','',''],
 \0x1FE6:['SMALL','UPSILON','','PERISPOMENI',''],
@@ -361,7 +345,7 @@ let grk_ucs_table = {
 \0x1FE8:['CAPITAL','UPSILON','','VRACHY',''],
 \0x1FE9:['CAPITAL','UPSILON','','MACRON',''],
 \0x1FEA:['CAPITAL','UPSILON','','VARIA',''],
-\0x1FEB:['CAPITAL','UPSILON','','OXIA',''],
+\0x038E:['CAPITAL','UPSILON','','OXIA',''],
 \0x1FEC:['CAPITAL','RHO','DASIA','',''],
 \0x1FF2:['SMALL','OMEGA','','VARIA','YPOGEGRAMMENI'],
 \0x1FF3:['SMALL','OMEGA','','','YPOGEGRAMMENI'],
@@ -369,9 +353,9 @@ let grk_ucs_table = {
 \0x1FF6:['SMALL','OMEGA','','PERISPOMENI',''],
 \0x1FF7:['SMALL','OMEGA','','PERISPOMENI','YPOGEGRAMMENI'],
 \0x1FF8:['CAPITAL','OMICRON','','VARIA',''],
-\0x1FF9:['CAPITAL','OMICRON','','OXIA',''],
+\0x038C:['CAPITAL','OMICRON','','OXIA',''],
 \0x1FFA:['CAPITAL','OMEGA','','VARIA',''],
-\0x1FFB:['CAPITAL','OMEGA','','OXIA',''],
+\0x038F:['CAPITAL','OMEGA','','OXIA',''],
 \0x1FFC:['CAPITAL','OMEGA','','','PROSGEGRAMMENI'],
 \0x20:['','','','',''],
 \0x37A:['','','','','YPOGEGRAMMENI'],
@@ -449,6 +433,8 @@ function! Put_accent(char, accent_char)
 endfunction
 "-----------------------------------------------------------------------------
 let b:keymap_name = "greek_polytonic"
+highlight lCursor ctermbg=red guibg=red
+
 loadkeymap
 "-----------------------------------------------------------------------------
 " Accents and breathings
