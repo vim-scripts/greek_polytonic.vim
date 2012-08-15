@@ -70,23 +70,54 @@ Usage:
 * Also switch the keyboard to Greek with ALT-SHIFT (or whatever)
 
 * To type any of the actual symbols of the accent keys (/, \, ] , [, .. etc.,)  
-   you can toggle off the keymap with CTRL-^.
+   you can toggle off the keymap with CTRL-^. When this keymap is active
+   the word <Polytonic> appears on the far right of the status bar.
 
+*  Search for polytonic text from the search window. 
+   To open search window type: q/
 
+*  To Search/Replace or type other commands that involve arguments 
+   in polytonic text invoke the command window by typing q: 
+   There you can either type or copy/paste polytonic text.  
 
 Notes: 
 
-   Consolas is a Microsoft font found in Windows 7 (The Consolas font
-   shipped with Windows Vista is not suitable - has no extended Greek
-   characters). It is a very good monospaced font for displaying
-   and for printing polytonic Greek text.  (Microsoft is very good to us
-   Greek scholars). Here is a screenshot of vim editing the text of 
-   Ptolemy's Almagest displayed in 16 pt Consolas:
-   http://img9.imageshack.us/img9/3386/ptolemyalmagest.jpg
-   
-   If you have problems with printing greek utf-8 use
-   paps (http://paps.sourceforge.net/)
+   Consolas is a Microsoft font found in Windows 7 (The Consolas font shipped
+   with Windows Vista is not suitable - has no extended Greek characters). It
+   is a very good monospaced font for displaying and for printing polytonic
+   Greek text.  (Microsoft is very good to us Greek scholars). 
+   Edit: Lately the open source font DejaVu Sans Mono has become better
+   than Consolas,  both for displaying and printing polytonic Greek text. 
+
+   Here is a screenshot of vim editing the text of Homer's Iliad
+   displayed in 16pt DejaVu Sans Mono. The colour scheme is biogoo:
+   http://img6.imageshack.us/img6/5470/iliad1vim.png
+
+   If you have problems with printing greek utf-8 from vim, 
+   use paps (http://paps.sourceforge.net/)
    I use it from within vim by creating a command as folows:
    :command Paps write !paps --font=Consolas\ 10 | lpr
+
+   For polytonic Greek spell checking see vimscript#3388.
+  
+   Below are the settings I use in my .vimrc file so I can type and 
+   spellcheck polytonic Greek:
+
+  "--------------------------------------------
+   set guifont=Monospace\ Regular\ 16
+   set encoding=utf-8
+   set fenc=utf-8
+   set keymap=greek_polytonic
+   set spelllang=polytonic,en       
+   set spellsuggest=10
+   set spell
+  "--------------------------------------------
+
+  Note: In my system 'Monospace' is aliased to the font DejaVu Sans Mono.  
+
+
+
+
+
 
 

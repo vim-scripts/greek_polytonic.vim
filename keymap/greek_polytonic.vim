@@ -1,6 +1,6 @@
 " Vim Keymap file for Polytonic Greek (utf-8)
 " Maintainer: Proteus <proteuss@sdf.lonestar.org>
-" Last Updated: Mon 10 Oct 2010 14:00:00  Version 1.1
+" Last Updated: Mon 04 Aug 2012 14:00:00  Version 1.2
 "
 "-----------------------------------------------------------------------------
 " Installation:
@@ -384,16 +384,16 @@ let grk_ucs_table = {
 source  $VIMRUNTIME/keymap/greek_iso-8859-7.vim
 "
 " Change this if placed in vim keymaps directory
-" source /usr/share/vim/vim72/keymap/greek_iso-8859-7.vim
+" source /usr/share/vim/vim73/keymap/greek_iso-8859-7.vim
 " or even better:
 " source <sfile>:p:h/greek_iso-8859-7.vim
 "
 "
 "-----------------------------------------------------------------------------
 " This function is called every time an accent key is pressed.
-" If the preceding character can take the accent then it deletes it and 
-" replaces it with the accented version of the same character (if such a
-" character exists in the table above)
+" If the preceding character can take the accent the is deleted and 
+" replaced with the accented version of the same character (provided that 
+" such a character exists in the table above).
 "
 function! Put_accent(char, accent_char)
   let char_code = char2nr(a:char)
@@ -432,7 +432,11 @@ function! Put_accent(char, accent_char)
   return out_char
 endfunction
 "-----------------------------------------------------------------------------
-let b:keymap_name = "greek_polytonic"
+" This name appears in the status bar when the keymap is active.
+let b:keymap_name = "Polytonic"
+
+" Also change cursor colour to red.
+" Note that this setting is altered by colourschemes.
 highlight lCursor ctermbg=red guibg=red
 
 loadkeymap
@@ -474,4 +478,6 @@ W	  <char-0x0387>  " ANO TELEIA (Latin input)
 #σα	<char-0x03E0>  " SAMPI
 #ΚΟ	<char-0x03D8>  " Archaic Qoppa (Capital)
 #κο	<char-0x03D9>  " Archaic qoppa
+<<< <char-0x2329>  " Angle bracket left
+>>> <char-0x232A>  " Angle bracket right
 "-----------------------------------------------------------------------------

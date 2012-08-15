@@ -100,3 +100,7 @@ i.e. all (vowel + oxia) symbols are represented
 by their equivalent, identical in apearance (vowel + tonos).
 This simplifies find/replace and spell checking.
 
+-------------------------
+Version 1.2
+-------------------------
+When active display keymap name in status bar 
